@@ -7,10 +7,19 @@ class Car{
         this.width=width;
         this.height=height;
 
-        this.controls= new this.Controls();
+        this.controls= new Controls();
     }
 
-    //draw method gets context as paramer
+    update(){
+        if(this.controls.forward){
+            this.y-=2;
+        }
+
+        if(this,this.controls.reverse){
+            this.y+=2;
+        }
+    }
+    //draw method gets context as parameter
     draw(ctx){
         ctx.beginPath();
         ctx.rect(
